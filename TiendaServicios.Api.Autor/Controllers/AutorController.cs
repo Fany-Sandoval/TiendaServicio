@@ -6,9 +6,11 @@ using System.Threading.Tasks;
 using TiendaServicios.Api.Autor.Aplicacion;
 
 namespace TiendaServicios.Api.Autor.Controllers
+
 {
-    [Route("api/[controller]")]
     [ApiController]
+    [Route("api/[controller]")]
+  
     public class AutorController : ControllerBase
     {
         private readonly IMediator _mediator;
