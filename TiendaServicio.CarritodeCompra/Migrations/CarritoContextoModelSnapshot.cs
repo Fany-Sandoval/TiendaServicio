@@ -29,6 +29,9 @@ namespace TiendaServicio.CarritodeCompra.Migrations
                     b.Property<DateTime?>("FechaCreacion")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("UserName")
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("CarritoSesionId");
 
                     b.ToTable("CarritoSesiones");

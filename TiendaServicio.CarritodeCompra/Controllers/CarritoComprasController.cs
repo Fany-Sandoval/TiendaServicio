@@ -1,6 +1,7 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using TiendaServicio.CarritodeCompra.Aplicacion;
 
@@ -25,6 +26,12 @@ namespace TiendaServicio.CarritodeCompra.Controllers
         {
             return await _mediator.Send(new Consulta.Ejecuta { CarritoSesionId= id });
 
+        }
+        [HttpGet]
+        public async Task<ActionResult<List<CarritoDto>>> ObtenerCarritos()
+        {
+            var carritos = await _mediator.Send(new ConsultaClase.ListaCarrito());
+            return Ok(carritos);
         }
     }
 }

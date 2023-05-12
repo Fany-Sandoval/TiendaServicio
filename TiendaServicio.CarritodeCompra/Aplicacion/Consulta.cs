@@ -46,15 +46,21 @@ namespace TiendaServicio.CarritodeCompra.Aplicacion
                             TituloLibro = objetoLibro.Titulo,
                             FechaPublicacion = objetoLibro.FechaPublicacion,
                             LibroId = objetoLibro.LibreriaMateriaId,
+                            Precio = objetoLibro.Precio,
+
                         };
                         listaCarritoDto.Add(carritoDetalle);
                     }
+
                 }
                     var carritoSessionDto = new CarritoDto
                     {
                         CarritoId = carritoSesion.CarritoSesionId,
                         FechaCreacionSesion = carritoSesion.FechaCreacion,
-                        ListaDeProductos = listaCarritoDto
+                        ListaDeProductos = listaCarritoDto,
+                        UserName = carritoSesion.UserName
+                        
+
                     };
 
                    

@@ -10,8 +10,8 @@ using TiendaServicio.CarritodeCompra.Persitencia;
 namespace TiendaServicio.CarritodeCompra.Migrations
 {
     [DbContext(typeof(CarritoContexto))]
-    [Migration("20230324165918_Carrito")]
-    partial class Carrito
+    [Migration("20230330045945_v2")]
+    partial class v2
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -30,6 +30,9 @@ namespace TiendaServicio.CarritodeCompra.Migrations
 
                     b.Property<DateTime?>("FechaCreacion")
                         .HasColumnType("datetime2");
+
+                    b.Property<string>("UserName")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("CarritoSesionId");
 

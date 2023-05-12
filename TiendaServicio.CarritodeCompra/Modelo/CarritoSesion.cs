@@ -8,6 +8,8 @@ namespace TiendaServicio.CarritodeCompra.Modelo
         public int CarritoSesionId { get; set; }
 
         public DateTime? FechaCreacion { get; set; }
+        public string UserName { get; set; }
         public ICollection<CarritoSesionDetalle> ListaDetalle { get; set; }
+       
     }
 }

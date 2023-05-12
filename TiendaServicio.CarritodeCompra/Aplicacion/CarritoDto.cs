@@ -7,6 +7,7 @@ namespace TiendaServicio.CarritodeCompra.Aplicacion
     {
         public int CarritoId { get; set; }
         public DateTime ? FechaCreacionSesion { get; set; }
+        public string UserName { get; set; }
         public List<CarritoDetalleDdto> ListaDeProductos { get; set; }
     }
 }

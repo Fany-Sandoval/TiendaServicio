@@ -14,6 +14,7 @@ namespace TiendaServicio.CarritodeCompra.Aplicacion
         public class Ejecuta : IRequest
         {
             public DateTime FechaCreacionSesion { get; set; }
+            public string UserName { get; set; }
             public List<string> ProductoLista { get; set; }
         }
         public class Manejador : IRequestHandler<Ejecuta>
@@ -28,7 +29,8 @@ namespace TiendaServicio.CarritodeCompra.Aplicacion
             {
                 var carritoSesion = new CarritoSesion
                 {
-                    FechaCreacion = request.FechaCreacionSesion
+                    FechaCreacion = request.FechaCreacionSesion,
+                    UserName = request.UserName,
                 };
                 _context.CarritoSesiones.Add(carritoSesion);
                 var result = await _context.SaveChangesAsync();
@@ -44,6 +46,7 @@ namespace TiendaServicio.CarritodeCompra.Aplicacion
                         FechaCreacion = DateTime.Now,
                         CarritoSesionId = id,
                         ProductoSeleccionado = p
+                        
                     };
                     _context.CarritoSesionDetalle.Add(detalleSesion);
                 }

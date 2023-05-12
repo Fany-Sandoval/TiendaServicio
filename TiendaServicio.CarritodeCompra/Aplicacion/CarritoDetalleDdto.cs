@@ -8,5 +8,6 @@ namespace TiendaServicio.CarritodeCompra.Aplicacion
         public string TituloLibro { get; set; }
         public string AutorLibro { get; set; }
         public DateTime? FechaPublicacion { get; set; }
+        public double Precio { get; set; }
     }
 }

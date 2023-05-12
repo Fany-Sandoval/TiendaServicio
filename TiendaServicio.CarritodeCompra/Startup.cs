@@ -37,6 +37,7 @@ namespace TiendaServicio.CarritodeCompra
             services.AddScoped<ILibroService, LibrosService>();
             services.AddMediatR(typeof(Nuevo.Manejador).Assembly);
             services.AddAutoMapper(typeof(Consulta.Manejador));
+         
             services.AddDbContext<CarritoContexto>(options =>
             options.UseSqlServer(
                 Configuration.GetConnectionString("DefaultConnection")));
